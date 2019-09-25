@@ -16,10 +16,7 @@ try {
 			};
 		}
 
-	}, { urls: [
-			"*://*.google.com/*"
-			//"<all_urls>"
-			] }, ["blocking"]);
+	}, { urls: ["*://*.google.com/url?*"] }, ["blocking"]);
 } catch (e) {
 	console.log(e.message);
 }
