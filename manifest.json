@@ -8,7 +8,6 @@
 		"tabs",
 		"webRequest",
 		"webRequestBlocking",
-		"webNavigation",
 		"<all_urls>"
 	],
 	
@@ -21,7 +20,6 @@
 			"matches": ["<all_urls>"],
 			"js": ["content-script.js"]
 		}
-	
 	]
 
 }
