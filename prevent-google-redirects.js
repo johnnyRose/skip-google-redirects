@@ -28,7 +28,8 @@ try {
 			browser.tabs.sendMessage(details.tabId, newUrl);
 			
 			return {
-				cancel: true
+				redirectUrl: newUrl
+				//cancel: true
 			};
 		}
 
