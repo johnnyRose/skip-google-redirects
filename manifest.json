@@ -1,8 +1,13 @@
 {
 	"manifest_version": 2,
-	"name": "Prevent Google Redirects",
+	"name": "Skip Google Redirects",
 	"version": "0.1",
-	"description": "Prevents Google from taking you to its redirect page when clicking search results",
+	"description": "Skips Google's redirect page when clicking search results.",
+	
+	"icons": {
+		"48": "icons/icon-48.png",
+		"96": "icons/icon-96.png"
+	},
 	
 	"permissions": [
 		"webRequest",
@@ -11,14 +16,13 @@
 	],
 	
 	"background": {
-		"scripts": ["prevent-google-redirects.js"]
+		"scripts": ["background.js"]
 	},
 	
 	"content_scripts": [
 		{
 			"matches": ["*://*.google.com/search?*"],
-			"js": ["content-script.js"]
+			"js": ["content.js"]
 		}
 	]
-
 }
