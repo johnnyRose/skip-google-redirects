@@ -9,6 +9,11 @@ browser.webRequest.onBeforeRequest.addListener(function (details) {
 		
 		var startIndex = paramStartIndex + parameter.length;
 		var endIndex = details.url.indexOf('&', startIndex);
+		
+		if (endIndex === -1) {
+			endIndex = details.url.length;
+		}
+		
 		var newUrl = decodeURIComponent(details.url.substring(startIndex, endIndex));
 		
 		browser.tabs.sendMessage(details.tabId, newUrl);
