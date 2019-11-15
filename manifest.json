@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Skip Google Redirects",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Skips Google's redirect page when clicking search results, saving you valuable milliseconds and bandwidth.",
 	"homepage_url": "https://github.com/johnnyRose/skip-google-redirects",
 	
