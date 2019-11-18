@@ -1,0 +1,19 @@
+
+body {
+    font-family: Courier New, monospace;
+    max-width: 24em;
+    background-color: #fafafa;
+}
+
+h1 {
+    font-size: 1.5em;
+}
+
+h2 {
+    font-size: 1em;
+}
+
+a, a:visited, a:active {
+    color: blue;
+    text-decoration: none;
+}

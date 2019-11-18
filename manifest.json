@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Skip Google Redirects",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"description": "Skips Google's redirect page when clicking search results, saving you valuable milliseconds and bandwidth.",
 	"homepage_url": "https://github.com/johnnyRose/skip-google-redirects",
 	
@@ -13,7 +13,8 @@
 	"permissions": [
 		"webRequest",
 		"webRequestBlocking",
-		"<all_urls>"
+		"<all_urls>",
+        "storage"
 	],
 	
 	"browser_action": {
@@ -21,7 +22,8 @@
 			"48": "icons/icon-48-transparent.png",
 			"96": "icons/icon-96-transparent.png"
 		},
-		"default_title": "Skip Google Redirects"
+		"default_title": "Skip Google Redirects",
+        "default_popup": "html/default/default.html"
 	},
 	
 	"background": {
