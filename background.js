@@ -18,11 +18,11 @@ browser.tabs.onCreated.addListener(function (tab) {
 });
 
 browser.windows.onCreated.addListener(function (window) {
-	mostRecentWindow = window;
+    mostRecentWindow = window;
 });
 
 browser.windows.onFocusChanged.addListener(function (windowId) {
-	mostRecentlyFocusedWindowId = windowId;
+    mostRecentlyFocusedWindowId = windowId;
 });
 
 browser.webRequest.onBeforeRequest.addListener(function (details) {
@@ -42,15 +42,15 @@ browser.webRequest.onBeforeRequest.addListener(function (details) {
         var newUrl = getTargetUrl(details, param);
         
         incrementCounter();
-		
-		var requestType = getRequestType(details, mostRecentTab);
-		        
-		if (requestType.tab || requestType.window) {
-			// Handle new tab/window logic - update the newest tab's URL, because
-			// redirecting below doesn't seem to work for some reason and
-			// there is no content script injected into about: pages.
+        
+        var requestType = getRequestType(details, mostRecentTab);
+                
+        if (requestType.tab || requestType.window) {
+            // Handle new tab/window logic - update the newest tab's URL, because
+            // redirecting below doesn't seem to work for some reason and
+            // there is no content script injected into about: pages.
             browser.tabs.update(mostRecentTab.id, { url: newUrl });
-		} else {
+        } else {
             browser.tabs.update(details.tabId, { url: newUrl });
         }
         
@@ -66,14 +66,14 @@ browser.webRequest.onBeforeRequest.addListener(function (details) {
 }, { urls: ["*://*.google.com/url?*"] }, ["blocking"]);
 
 function getTargetUrl(details, param) {
-	var startIndex = param.index + param.parameter.length;
-	var endIndex = details.url.indexOf('&', startIndex);
-	
-	if (endIndex === -1) {
-		endIndex = details.url.length;
-	}
-	
-	return decodeURIComponent(details.url.substring(startIndex, endIndex));
+    var startIndex = param.index + param.parameter.length;
+    var endIndex = details.url.indexOf('&', startIndex);
+    
+    if (endIndex === -1) {
+        endIndex = details.url.length;
+    }
+    
+    return decodeURIComponent(details.url.substring(startIndex, endIndex));
 }
 
 function incrementCounter() {
